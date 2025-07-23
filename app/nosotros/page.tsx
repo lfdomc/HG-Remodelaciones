@@ -194,7 +194,7 @@ export default function NosotrosPage() {
       {/* Stats */}
       <section className="py-20 bg-blue-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">500+</div>
               <div className="text-lg text-blue-100">Proyectos Completados</div>
@@ -207,10 +207,7 @@ export default function NosotrosPage() {
               <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">100+</div>
               <div className="text-lg text-blue-100">Clientes Satisfechos</div>
             </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">50+</div>
-              <div className="text-lg text-blue-100">Profesionales</div>
-            </div>
+           
           </div>
         </div>
       </section>
