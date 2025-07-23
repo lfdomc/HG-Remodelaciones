@@ -87,8 +87,8 @@ export default function NosotrosPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/const1.png/?height=500&width=600&text=Equipo+ConstructPro"
-                alt="Equipo ConstructPro"
+                src="/images/co1.webp?height=500&width=600&text=Equipo+ConstructPro"
+                alt="Equipo"
                 width={600}
                 height={500}
                 className="rounded-lg shadow-2xl"
