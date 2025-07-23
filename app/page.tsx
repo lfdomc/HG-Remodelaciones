@@ -6,6 +6,32 @@ import Link from "next/link"
 import ProjectCard from "@/components/ProjectCard"
 import { projects } from "@/lib/projects-data"
 
+export const metadata = {
+  title: "HG Remodelaciones | Construcción y Proyectos",
+  description:
+    "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
+  alternates: {
+    canonical: "https://hgremodelaciones.com/ ",
+  },
+  openGraph: {
+    url: "https://hgremodelaciones.com/ ",
+  title: "HG Remodelaciones | Construcción y Proyectos",
+    description:
+      "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
+    images: [
+      {
+        url: "/images/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "HG Remodelaciones Construcción y Proyectos",
+      },
+    ],
+  },
+};
+
+
+
+
 export default function Home() {
   return (
     <div className="flex flex-col">
