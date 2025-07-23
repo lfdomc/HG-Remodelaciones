@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: "1",
     title: "Ampliación de Rancho Condominal",
-    description: "Cunstrucción de un Rancho condominal con arquitectura moderna y sostenible.",
+    description: "Construcción de un Rancho condominal con arquitectura moderna y sostenible.",
     image: "/images/ampliacion_rancho/1-6.webp?height=300&width=400&text=Residencial+Los+Pinos",
     gallery: [
       "/images/ampliacion_rancho/1-2.webp?height=400&width=600&text=de lado",
