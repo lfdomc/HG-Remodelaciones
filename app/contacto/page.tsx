@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock, Loader2, Send } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Loader2, MessageCircle } from "lucide-react"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { useToast } from "@/components/ui/use-toast"
 
@@ -28,36 +28,42 @@ export default function ContactoPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Crear mensaje para WhatsApp
+      const whatsappMessage = `*Nuevo mensaje de contacto desde la web*
+
+*Nombre:* ${formData.name}
+*Email:* ${formData.email}
+*Teléfono:* ${formData.phone || 'No proporcionado'}
+*Asunto:* ${formData.subject}
+
+*Mensaje:*
+${formData.message}
+
+---
+Enviado desde: hgremodelaciones.com`
+
+      const phoneNumber = "+50670120250"
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
+
+      // Abrir WhatsApp en una nueva ventana
+      window.open(whatsappUrl, '_blank')
+
+      toast({
+        title: "¡Redirigiendo a WhatsApp!",
+        description: "Se abrirá WhatsApp con tu mensaje prellenado. Solo tienes que enviarlo.",
       })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        toast({
-          title: "¡Mensaje enviado!",
-          description: data.message || "Te contactaremos pronto.",
-        })
-        trackFormSubmission('contact', true)
+      
+      trackFormSubmission('contact', true)
+      
+      // Limpiar formulario después de un breve delay
+      setTimeout(() => {
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-      } else {
-        const data = await response.json()
-        toast({
-          title: "Error al enviar",
-          description: data.error || "Error al enviar el mensaje. Por favor intenta nuevamente.",
-          variant: "destructive",
-        })
-        trackFormSubmission('contact', false)
-      }
+      }, 1000)
+
     } catch (error) {
       toast({
-        title: "Error de conexión",
-        description: "No se pudo enviar el mensaje. Por favor intenta nuevamente.",
+        title: "Error",
+        description: "No se pudo abrir WhatsApp. Por favor intenta nuevamente.",
         variant: "destructive",
       })
       trackFormSubmission('contact', false)
@@ -94,7 +100,11 @@ export default function ContactoPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Envíanos un Mensaje</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Envíanos un Mensaje por WhatsApp</h2>
+              <p className="text-gray-600 mb-6">
+                Completa el formulario y te redirigiremos a WhatsApp con tu mensaje prellenado. 
+                Solo tendrás que enviarlo para contactarnos directamente.
+              </p>
               <Card>
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -179,18 +189,18 @@ export default function ContactoPage() {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-green-600 hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
                         <>
                           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                          Enviando...
+                          Abriendo WhatsApp...
                         </>
                       ) : (
                         <>
-                          <Send className="h-5 w-5 mr-2" />
-                          Enviar Mensaje
+                          <MessageCircle className="h-5 w-5 mr-2" />
+                          Enviar por WhatsApp
                         </>
                       )}
                     </Button>

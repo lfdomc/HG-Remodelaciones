@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
-import { Calculator, Clock, Shield, Award, Loader2, FileText, CheckCircle } from "lucide-react"
+import { Calculator, Clock, Shield, Award, Loader2, FileText, CheckCircle, MessageCircle } from "lucide-react"
 import { useAnalytics } from "@/hooks/use-analytics"
 import { useToast } from "@/components/ui/use-toast"
 
@@ -56,50 +56,64 @@ export default function CotizacionPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/quote', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Construir el mensaje de WhatsApp con formato estructurado
+      const whatsappMessage = `🏠 *SOLICITUD DE COTIZACIÓN*
+
+📋 *DATOS PERSONALES*
+• Nombre: ${formData.name}
+• Email: ${formData.email}
+• Teléfono: ${formData.phone}
+• Ubicación: ${formData.location}
+
+🔧 *DETALLES DEL PROYECTO*
+• Tipo: ${formData.projectType}
+• Área: ${formData.area} m²
+• Presupuesto: ${formData.budget || 'No especificado'}
+• Tiempo estimado: ${formData.timeline || 'No especificado'}
+
+⚙️ *SERVICIOS REQUERIDOS*
+${formData.services.length > 0 ? formData.services.map(service => `• ${service}`).join('\n') : '• No especificados'}
+
+📝 *DESCRIPCIÓN DEL PROYECTO*
+${formData.description}
+
+---
+Solicitud enviada desde HG Remodelaciones`
+
+      // Número de WhatsApp de la empresa
+      const phoneNumber = '+50688969195'
+      
+      // Crear URL de WhatsApp
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
+      
+      // Abrir WhatsApp en una nueva ventana
+      window.open(whatsappUrl, '_blank')
+
+      toast({
+        title: "¡Redirigiendo a WhatsApp!",
+        description: "Se abrirá WhatsApp con tu cotización pre-llenada. Solo envía el mensaje.",
+      })
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        area: "",
+        location: "",
+        budget: "",
+        timeline: "",
+        description: "",
+        services: [],
       })
 
-      const data = await response.json()
-
-      if (response.ok) {
-        const message = data.quoteId 
-          ? `${data.message} Tu número de referencia es: ${data.quoteId}`
-          : data.message
-        
-        toast({
-          title: "¡Cotización enviada!",
-          description: message,
-        })
-        trackFormSubmission('quote', true)
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          projectType: "",
-          area: "",
-          location: "",
-          budget: "",
-          timeline: "",
-          description: "",
-          services: [],
-        })
-      } else {
-        toast({
-          title: "Error al enviar",
-          description: data.error || "Error al enviar la solicitud. Por favor intenta nuevamente.",
-          variant: "destructive",
-        })
-        trackFormSubmission('quote', false)
-      }
+      // Track the quote submission
+      trackFormSubmission('quote', true)
     } catch (error) {
       toast({
-        title: "Error de conexión",
-        description: "No se pudo enviar la solicitud. Por favor intenta nuevamente.",
+        title: "Error",
+        description: "Hubo un problema al procesar tu solicitud. Por favor, intenta de nuevo.",
         variant: "destructive",
       })
       trackFormSubmission('quote', false)
@@ -180,9 +194,9 @@ export default function CotizacionPage() {
           <div className="max-w-4xl mx-auto">
             <Card>
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-gray-900">Información del Proyecto</CardTitle>
+                <CardTitle className="text-2xl text-gray-900">Solicita tu Cotización por WhatsApp</CardTitle>
                 <CardDescription>
-                  Completa todos los campos para recibir una cotización precisa y detallada
+                  Completa el formulario y te redirigiremos a WhatsApp con tu solicitud pre-llenada. Solo envía el mensaje y nos contactaremos contigo en menos de 24 horas.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-8">
@@ -328,18 +342,18 @@ export default function CotizacionPage() {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-green-600 hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Procesando...
+                        Abriendo WhatsApp...
                       </>
                     ) : (
                       <>
-                        <Calculator className="h-5 w-5 mr-2" />
-                        Solicitar Cotización Gratuita
+                        <MessageCircle className="h-5 w-5 mr-2" />
+                        Enviar Cotización por WhatsApp
                       </>
                     )}
                   </Button>

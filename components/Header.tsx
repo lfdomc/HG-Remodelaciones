@@ -62,7 +62,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
-             <Link href={whatsappUrl}>
+             <Link href="/cotizacion">
               <Button className="bg-blue-600 hover:bg-blue-700">Solicitar Cotización</Button>
             </Link>
           </div>
@@ -87,7 +87,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href={whatsappUrl}>
+              <Link href="/cotizacion">
                 <Button className="bg-blue-600 hover:bg-blue-700 mt-4 w-full">Solicitar Cotización</Button>
               </Link>
             </nav>

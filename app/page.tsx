@@ -12,10 +12,10 @@ export const metadata = {
   description:
     "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
   alternates: {
-    canonical: "https://hgremodelaciones.com/",
+    canonical: "https://hg-remodelaciones.vercel.app//",
   },
   openGraph: {
-    url: "https://hgremodelaciones.com/",
+    url: "https://hg-remodelaciones.vercel.app//",
     title: "HG Remodelaciones | Construcción y Proyectos",
     description:
       "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
@@ -151,9 +151,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { number: "500+", label: "Proyectos Completados" },
+              { number: "100+", label: "Proyectos Completados" },
               { number: "20+", label: "Años de Experiencia" },
-              { number: "100+", label: "Clientes Satisfechos" },
+              { number: "80+", label: "Clientes Satisfechos" },
               
             ].map((stat, index) => (
               <div key={index}>
