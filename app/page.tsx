@@ -6,6 +6,7 @@ import Link from "next/link"
 import ProjectCard from "@/components/ProjectCard"
 import { projects } from "@/lib/projects-data"
 
+
 export const metadata = {
   title: "HG Remodelaciones | Construcción y Proyectos",
   description:
@@ -20,7 +21,7 @@ export const metadata = {
       "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
     images: [
       {
-        url: "/images/logo.webp",
+        url: "/images/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "HG Remodelaciones Construcción y Proyectos",
@@ -67,11 +68,13 @@ export default function Home() {
             </div>
             <div className="relative">
               <Image
-                src="/images/conste.webp?height=400&width=600&text=Construcción"
+                src="/images/conste.webp"
                 alt="Proyecto de construcción residencial realizado por HG Remodelaciones en Costa Rica"
-                width={450}
-                height={450}
-                className="rounded-lg shadow-2xl"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-2xl w-full h-auto"
+                priority
+                sizes="(max-width: 568px) 100vw, (max-width: 800px) 30vw, 400px"
               />
             </div>
           </div>

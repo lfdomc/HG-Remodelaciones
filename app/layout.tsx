@@ -105,7 +105,7 @@ export default function RootLayout({
         <Analytics />
         <StructuredData />
         <Header />
-        <Breadcrumbs />
+        
         <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppButton />

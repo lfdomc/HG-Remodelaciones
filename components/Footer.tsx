@@ -12,10 +12,11 @@ export default function Footer() {
             <div className="flex items-center space-x-2">
               <Image
                             src="/images/logo2.webp"
-                            alt="Logo"
-                            width={120}
-                            height={120}
-                            className=""
+                            alt="HG Remodelaciones Logo"
+                            width={80}
+                            height={80}
+                            className="h-16 w-auto"
+                            sizes="80px"
                           />
               <span className="text-2xl font-bold"></span>
             </div>
@@ -29,10 +30,16 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-blue-400">Enlaces Rápidos</h3>
             <ul className="space-y-2">
-              {["Inicio", "Servicios", "Proyectos", "Nosotros", "Contacto"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                    {item}
+              {[
+                { name: "Inicio", href: "/" },
+                { name: "Servicios", href: "/servicios" },
+                { name: "Proyectos", href: "/proyectos" },
+                { name: "Nosotros", href: "/nosotros" },
+                { name: "Contacto", href: "/contacto" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-300 hover:text-blue-400 transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -51,7 +58,7 @@ export default function Footer() {
                 "Consultoría",
               ].map((service) => (
                 <li key={service}>
-                  <Link href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  <Link href="/servicios" className="text-gray-300 hover:text-blue-400 transition-colors">
                     {service}
                   </Link>
                 </li>
@@ -83,16 +90,16 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Facebook">
                 <Facebook className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Instagram">
                 <Instagram className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Twitter">
                 <Twitter className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Conéctate en LinkedIn">
                 <Linkedin className="h-6 w-6" />
               </Link>
             </div>

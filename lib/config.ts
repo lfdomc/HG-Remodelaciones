@@ -11,10 +11,16 @@ export const getBaseUrl = () => {
   }
   
   // En desarrollo
-  return process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001'
+  return process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 }
 
 export const getImageUrl = (path: string) => {
+  // En desarrollo, usar rutas relativas para imágenes estáticas
+  if (process.env.NODE_ENV !== 'production') {
+    return path.startsWith('/') ? path : `/${path}`
+  }
+  
+  // En producción, usar URLs absolutas
   const baseUrl = getBaseUrl()
   return `${baseUrl}${path.startsWith('/') ? path : `/${path}`}`
 }

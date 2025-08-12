@@ -7,6 +7,18 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function Header() {
+
+
+  const phoneNumber = "+50688969195" // Reemplaza con el número real
+  const message = "Hola, me interesa obtener más información sobre sus servicios de construcción."
+
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+
+
+
+
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
@@ -25,10 +37,11 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/logo.webp"
-              alt="Logo"
-              width={120}
-              height={120}
-              className=""
+              alt="HG Remodelaciones Logo"
+              width={80}
+              height={80}
+              className="h-12 w-auto"
+              sizes="80px"
             />
             
             <span className="text-2xl font-bold text-gray-900"></span>
@@ -49,7 +62,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
-            <Link href="/cotizacion">
+             <Link href={whatsappUrl}>
               <Button className="bg-blue-600 hover:bg-blue-700">Solicitar Cotización</Button>
             </Link>
           </div>
@@ -74,7 +87,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/cotizacion" onClick={() => setIsMenuOpen(false)}>
+              <Link href={whatsappUrl}>
                 <Button className="bg-blue-600 hover:bg-blue-700 mt-4 w-full">Solicitar Cotización</Button>
               </Link>
             </nav>
