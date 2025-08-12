@@ -353,7 +353,7 @@ Solicitud enviada desde HG Remodelaciones`
                     ) : (
                       <>
                         <MessageCircle className="h-5 w-5 mr-2" />
-                        Enviar Cotización por WhatsApp
+                        Enviar Cotización
                       </>
                     )}
                   </Button>

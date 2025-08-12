@@ -87,7 +87,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/cotizacion">
+              <Link href="/cotizacion" onClick={() => setIsMenuOpen(false)}>
                 <Button className="bg-blue-600 hover:bg-blue-700 mt-4 w-full">Solicitar Cotización</Button>
               </Link>
             </nav>
