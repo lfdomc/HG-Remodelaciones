@@ -2,23 +2,25 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { siteConfig } from "@/lib/config"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import WhatsAppButton from "@/components/WhatsAppButton"
 import StructuredData from "@/components/StructuredData"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import Analytics from "@/components/Analytics"
+import SocialMetaTags from "@/components/SocialMetaTags"
 import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hgremodelaciones.com'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "HG Remodelaciones - Empresa de Construcción en Costa Rica",
+    default: siteConfig.title,
     template: "%s | HG Remodelaciones"
   },
-  description: "Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia. Proyectos residenciales, comerciales e industriales en Alajuela y todo el país.",
+  description: siteConfig.description,
   keywords: [
     "construcción Costa Rica",
     "remodelaciones Alajuela", 
@@ -48,24 +50,32 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_CR',
-    url: 'https://hgremodelaciones.com',
-    siteName: 'HG Remodelaciones',
-    title: 'HG Remodelaciones - Construcción y Remodelaciones en Costa Rica',
-    description: 'Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.',
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: [
       {
-        url: '/images/logo.webp',
+        url: siteConfig.logo,
         width: 1200,
         height: 630,
         alt: 'HG Remodelaciones - Empresa de Construcción Costa Rica',
+        type: 'image/webp',
+      },
+      {
+        url: siteConfig.logoJpeg,
+        width: 1200,
+        height: 630,
+        alt: 'HG Remodelaciones - Empresa de Construcción Costa Rica',
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'HG Remodelaciones - Construcción en Costa Rica',
-    description: 'Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.',
-    images: ['/images/logo.webp'],
+    description: siteConfig.description,
+    images: [siteConfig.logo],
   },
   verification: {
     google: 'your-verification-code', // Agregar cuando tengas el código
@@ -73,6 +83,11 @@ export const metadata: Metadata = {
   other: {
     'msvalidate.01': 'your-bing-verification-code',
     'facebook-domain-verification': 'your-facebook-verification-code',
+    // Metadatos específicos para WhatsApp
+    'og:image:secure_url': siteConfig.logo,
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/webp',
   },
 }
 
@@ -83,6 +98,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <SocialMetaTags />
+      </head>
       <body className={inter.className}>
         <Analytics />
         <StructuredData />

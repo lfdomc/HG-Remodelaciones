@@ -1,39 +1,28 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import ProjectCard from "@/components/ProjectCard"
 import { projects } from "@/lib/projects-data"
 import Link from "next/link"
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Proyectos de Construcción Realizados",
-  description: "Galería de proyectos de construcción y remodelación realizados por HG Remodelaciones en Costa Rica. Más de 500 proyectos completados en 20 años.",
-  keywords: [
-    "proyectos construcción Costa Rica",
-    "obras realizadas HG Remodelaciones",
-    "proyectos residenciales Costa Rica",
-    "construcciones comerciales",
-    "galería proyectos construcción",
-    "obras terminadas Alajuela",
-    "portfolio construcción"
-  ],
-  openGraph: {
-    title: "Proyectos Realizados - HG Remodelaciones",
-    description: "Descubre nuestros proyectos de construcción y remodelación en Costa Rica. Más de 500 proyectos completados.",
-    url: "https://hgremodelaciones.com/proyectos",
-    images: [
-      {
-        url: "/images/ampliacion_rancho/1-6.webp",
-        width: 1200,
-        height: 630,
-        alt: "Proyectos de Construcción HG Remodelaciones",
-      },
-    ],
-  },
-}
+import { useState, useMemo } from "react"
 
 export default function ProyectosPage() {
-  const categories = ["Todos", "Residencial", "Comercial", "Corporativo", "Salud", "Educativo"]
+  // Get unique categories from projects data
+  const uniqueCategories = useMemo(() => {
+    const cats = Array.from(new Set(projects.map(project => project.category)))
+    return ["Todos", ...cats]
+  }, [])
+
+  const [selectedCategory, setSelectedCategory] = useState("Todos")
+
+  // Filter projects based on selected category
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === "Todos") {
+      return projects
+    }
+    return projects.filter(project => project.category === selectedCategory)
+  }, [selectedCategory])
 
   return (
     <div className="min-h-screen">
@@ -49,26 +38,15 @@ export default function ProyectosPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section 
       <section className="py-12 bg-white border-b">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">Proyectos Completados</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">20+</div>
-              <div className="text-gray-600">Años de Experiencia</div>
-            </div>
+          <div className="grid md:grid-cols-1 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-blue-600 mb-2">100+</div>
-              <div className="text-gray-600">Clientes Satisfechos</div>
+              <div className="text-gray-600">Proyectos Completados</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">1M+</div>
-              <div className="text-gray-600">m² Construidos</div>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -83,25 +61,39 @@ export default function ProyectosPage() {
             </p>
           </div>
 
-          {/* Category Filter 
+          {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
+            {uniqueCategories.map((category) => (
               <Badge
                 key={category}
-                variant="secondary"
-                className="px-4 py-2 cursor-pointer hover:bg-blue-100 hover:text-blue-800 transition-colors"
+                variant={selectedCategory === category ? "default" : "secondary"}
+                className={`px-4 py-2 cursor-pointer transition-colors ${
+                  selectedCategory === category
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    : "hover:bg-blue-100 hover:text-blue-800"
+                }`}
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Badge>
             ))}
-          </div>*/}
+          </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
+
+          {/* No projects message */}
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">
+                No se encontraron proyectos en la categoría "{selectedCategory}"
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

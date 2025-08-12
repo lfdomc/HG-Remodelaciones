@@ -129,14 +129,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Descripción Completa</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  {project.description} Este proyecto representa uno de nuestros logros más significativos, combinando
-                  innovación arquitectónica con funcionalidad práctica. Cada detalle fue cuidadosamente planificado y
+                  {project.description} Cada detalle fue cuidadosamente planificado y
                   ejecutado para superar las expectativas del cliente.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  El desarrollo de este proyecto involucró un equipo multidisciplinario de arquitectos, ingenieros y
-                  especialistas en construcción, trabajando en estrecha colaboración para entregar un resultado
+                  El desarrollo de este proyecto involucró un equipo multidisciplinario para entregar un resultado
                   excepcional dentro del tiempo y presupuesto establecidos.
                 </p>
               </div>

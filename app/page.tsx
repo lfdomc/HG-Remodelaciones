@@ -11,11 +11,11 @@ export const metadata = {
   description:
     "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
   alternates: {
-    canonical: "https://hgremodelaciones.com/ ",
+    canonical: "https://hgremodelaciones.com/",
   },
   openGraph: {
-    url: "https://hgremodelaciones.com/ ",
-  title: "HG Remodelaciones | Construcción y Proyectos",
+    url: "https://hgremodelaciones.com/",
+    title: "HG Remodelaciones | Construcción y Proyectos",
     description:
       "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
     images: [
@@ -49,20 +49,20 @@ export default function Home() {
                 alta calidad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/proyectos" className="flex items-center space-x-2">
-                <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
-                  Ver Proyectos
-                </Button>
+                <Link href="/proyectos">
+                  <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
+                    Ver Proyectos
+                  </Button>
                 </Link>
-                <Link href="/proyectos" className="flex items-center space-x-2">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
-                >Contactar</Button>
+                <Link href="/contacto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
+                  >
+                    Contactar
+                  </Button>
                 </Link>
-                
-
               </div>
             </div>
             <div className="relative">
@@ -178,7 +178,7 @@ export default function Home() {
                 icon: Phone,
                 title: "Teléfono",
                 info: "+506 8896 9195",
-                link: "tel:+50688969195 ",
+                link: "tel:+50688969195",
               },
               {
                 icon: Mail,
