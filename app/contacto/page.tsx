@@ -42,7 +42,7 @@ ${formData.message}
 ---
 Enviado desde: hgremodelaciones.com`
 
-      const phoneNumber = "+50670120250"
+      const phoneNumber = "+50688969195"
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
       // Abrir WhatsApp en una nueva ventana
@@ -150,7 +150,7 @@ Enviado desde: hgremodelaciones.com`
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+506 123-4567"
                         />
                       </div>
                       <div>
@@ -225,7 +225,7 @@ Enviado desde: hgremodelaciones.com`
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 font-medium">+506 8896 9195</p>
+                    <p className="text-gray-700 font-medium">+506 7071 6550</p>
                     <p className="text-gray-600 text-sm">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
                   </CardContent>
                 </Card>

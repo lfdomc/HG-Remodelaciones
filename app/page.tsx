@@ -180,8 +180,8 @@ export default function Home() {
               {
                 icon: Phone,
                 title: "Teléfono",
-                info: "+506 8896 9195",
-                link: "tel:+50688969195",
+                info: "+506 7071 6550",
+                link: "tel:+50670716550",
               },
               {
                 icon: Mail,

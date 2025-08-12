@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-300">+506 8896 9195</span>
+                <span className="text-gray-300">+506 7071-6550</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />
@@ -89,6 +89,7 @@ export default function Footer() {
         {/* Social Media & Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/*
             <div className="flex space-x-6">
               <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Facebook">
                 <Facebook className="h-6 w-6" />
@@ -103,6 +104,7 @@ export default function Footer() {
                 <Linkedin className="h-6 w-6" />
               </Link>
             </div>
+            */}
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Temsa Tecnología. Todos los derechos reservados.
             </p>

@@ -38,10 +38,10 @@ export default function Header() {
             <Image
               src="/images/logo.webp"
               alt="HG Remodelaciones Logo"
-              width={80}
-              height={80}
-              className="h-12 w-auto"
-              sizes="80px"
+              width={120}
+              height={120}
+              className="h-16 w-auto"
+              sizes="120px"
             />
             
             <span className="text-2xl font-bold text-gray-900"></span>
