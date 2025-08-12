@@ -7,10 +7,8 @@ export const getBaseUrl = () => {
   
   // En el servidor
   if (process.env.NODE_ENV === 'production') {
-    // Usar VERCEL_URL si está disponible, sino usar la URL de producción configurada
-    return process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}` 
-      : process.env.NEXT_PUBLIC_PRODUCTION_URL || 'https://hg-remodelaciones.vercel.app'
+    // Usar siempre la URL de Vercel para producción
+    return 'https://hg-remodelaciones.vercel.app'
   }
   
   // En desarrollo
@@ -34,7 +32,7 @@ export const siteConfig = {
   title: 'HG Remodelaciones - Construcción y Remodelaciones en Costa Rica',
   description: 'Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.',
   url: getBaseUrl(),
-  ogImage: getImageUrl('/images/logo.jpeg'),
+  ogImage: `${getBaseUrl()}/api/og-image`,
   logo: getImageUrl('/images/logo.webp'),
   logoJpeg: getImageUrl('/images/logo.jpeg'),
 }

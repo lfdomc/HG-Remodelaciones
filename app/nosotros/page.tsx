@@ -196,7 +196,7 @@ export default function NosotrosPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">500+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">100+</div>
               <div className="text-lg text-blue-100">Proyectos Completados</div>
             </div>
             <div>
@@ -204,7 +204,7 @@ export default function NosotrosPage() {
               <div className="text-lg text-blue-100">Años de Experiencia</div>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">100+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">80+</div>
               <div className="text-lg text-blue-100">Clientes Satisfechos</div>
             </div>
            

@@ -15,9 +15,13 @@ export default function SocialMetaTags() {
       
       {/* Metadatos específicos para WhatsApp */}
       <meta name="whatsapp:image" content={siteConfig.ogImage} />
+      <meta name="whatsapp:title" content="HG Remodelaciones - Construcción y Remodelaciones en Costa Rica" />
+      <meta name="whatsapp:description" content="Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia." />
       
       {/* Metadatos para Telegram */}
       <meta name="telegram:image" content={siteConfig.ogImage} />
+      <meta name="telegram:title" content="HG Remodelaciones - Construcción y Remodelaciones en Costa Rica" />
+      <meta name="telegram:description" content="Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia." />
       
       {/* Link rel para precargar la imagen */}
       <link rel="preload" href={siteConfig.ogImage} as="image" type="image/jpeg" />

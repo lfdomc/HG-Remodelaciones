@@ -59,14 +59,14 @@ export const metadata: Metadata = {
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
-          alt: 'HG Remodelaciones - Empresa de Construcción Costa Rica',
+          alt: siteConfig.title,
           type: 'image/jpeg',
         },
       ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HG Remodelaciones - Construcción en Costa Rica',
+    title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
@@ -81,6 +81,9 @@ export const metadata: Metadata = {
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
+    'og:image:alt': siteConfig.title,
+    'whatsapp:image': siteConfig.ogImage,
+    'telegram:image': siteConfig.ogImage,
   },
 }
 

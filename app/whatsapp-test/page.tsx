@@ -151,16 +151,14 @@ export default function WhatsAppTestPage() {
                   </div>
 
                   <div>
-                    <h4 className="font-medium mb-2">API de Debug Local</h4>
-                    <p className="text-sm text-gray-600 mb-2">
-                      Verifica la configuración actual
-                    </p>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="/api/og-debug" className="inline-flex items-center">
-                        Ver Metadatos
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </Link>
-                    </Button>
+                    <h4 className="font-medium mb-2">Información de Configuración</h4>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600"><strong>URL de la imagen:</strong> https://hg-remodelaciones.vercel.app/images/og-image.jpg</p>
+                      <p className="text-sm text-gray-600"><strong>Dimensiones:</strong> 1200x630 px</p>
+                      <p className="text-sm text-gray-600"><strong>Tipo:</strong> image/jpeg (optimizado para WhatsApp)</p>
+                      <p className="text-sm text-gray-600"><strong>URL del sitio:</strong> https://hg-remodelaciones.vercel.app</p>
+                      <p className="text-sm text-gray-600"><strong>URL de producción:</strong> https://hg-remodelaciones.vercel.app</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
