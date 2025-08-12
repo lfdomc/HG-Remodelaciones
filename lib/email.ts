@@ -1,6 +1,12 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only when needed to avoid build errors
+function getResendClient() {
+  if (!process.env.RESEND_API_KEY) {
+    return null
+  }
+  return new Resend(process.env.RESEND_API_KEY)
+}
 
 export interface ContactFormData {
   name: string
@@ -24,7 +30,9 @@ export interface QuoteFormData {
 }
 
 export async function sendContactEmail(data: ContactFormData) {
-  if (!process.env.RESEND_API_KEY) {
+  const resend = getResendClient()
+  
+  if (!resend) {
     console.log('Email service not configured. Contact form data:', data)
     return { success: true, message: 'Formulario procesado correctamente (modo desarrollo)' }
   }
@@ -72,7 +80,9 @@ export async function sendContactEmail(data: ContactFormData) {
 }
 
 export async function sendQuoteEmail(data: QuoteFormData) {
-  if (!process.env.RESEND_API_KEY) {
+  const resend = getResendClient()
+  
+  if (!resend) {
     console.log('Email service not configured. Quote form data:', data)
     return { success: true, message: 'Cotización procesada correctamente (modo desarrollo)' }
   }
