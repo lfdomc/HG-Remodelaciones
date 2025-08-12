@@ -9,9 +9,14 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Calculator, FileText, Clock, CheckCircle } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Calculator, Clock, Shield, Award, Loader2, FileText, CheckCircle } from "lucide-react"
+import { useAnalytics } from "@/hooks/use-analytics"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function CotizacionPage() {
+  const { trackFormSubmission } = useAnalytics()
+  const { toast } = useToast()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,10 +49,63 @@ export default function CotizacionPage() {
     "Instalaciones Especiales",
   ]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Cotización solicitada:", formData)
-    alert("Solicitud de cotización enviada correctamente. Nos pondremos en contacto contigo en las próximas 24 horas.")
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        const message = data.quoteId 
+          ? `${data.message} Tu número de referencia es: ${data.quoteId}`
+          : data.message
+        
+        toast({
+          title: "¡Cotización enviada!",
+          description: message,
+        })
+        trackFormSubmission('quote', true)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectType: "",
+          area: "",
+          location: "",
+          budget: "",
+          timeline: "",
+          description: "",
+          services: [],
+        })
+      } else {
+        toast({
+          title: "Error al enviar",
+          description: data.error || "Error al enviar la solicitud. Por favor intenta nuevamente.",
+          variant: "destructive",
+        })
+        trackFormSubmission('quote', false)
+      }
+    } catch (error) {
+      toast({
+        title: "Error de conexión",
+        description: "No se pudo enviar la solicitud. Por favor intenta nuevamente.",
+        variant: "destructive",
+      })
+      trackFormSubmission('quote', false)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleServiceChange = (service: string, checked: boolean) => {
@@ -265,9 +323,25 @@ export default function CotizacionPage() {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700">
-                    <Calculator className="h-5 w-5 mr-2" />
-                    Solicitar Cotización Gratuita
+
+
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        Procesando...
+                      </>
+                    ) : (
+                      <>
+                        <Calculator className="h-5 w-5 mr-2" />
+                        Solicitar Cotización Gratuita
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>

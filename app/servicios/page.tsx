@@ -3,6 +3,35 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Building2, Users, Wrench, Home, Building, Hammer } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Servicios de Construcción y Remodelación",
+  description: "Servicios integrales de construcción en Costa Rica: residencial, comercial, industrial, remodelaciones, mantenimiento y consultoría. Más de 20 años de experiencia.",
+  keywords: [
+    "servicios construcción Costa Rica",
+    "construcción residencial Alajuela",
+    "proyectos comerciales Costa Rica", 
+    "construcción industrial",
+    "remodelaciones Costa Rica",
+    "mantenimiento edificios",
+    "consultoría construcción",
+    "empresa constructora"
+  ],
+  openGraph: {
+    title: "Servicios de Construcción - HG Remodelaciones",
+    description: "Servicios integrales de construcción en Costa Rica: residencial, comercial, industrial y más.",
+    url: "https://hgremodelaciones.com/servicios",
+    images: [
+      {
+        url: "/images/conste.webp",
+        width: 1200,
+        height: 630,
+        alt: "Servicios de Construcción HG Remodelaciones",
+      },
+    ],
+  },
+}
 
 export default function ServiciosPage() {
   const services = [

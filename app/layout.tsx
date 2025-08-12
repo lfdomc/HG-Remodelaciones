@@ -5,14 +5,75 @@ import "./globals.css"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import WhatsAppButton from "@/components/WhatsAppButton"
+import StructuredData from "@/components/StructuredData"
+import Breadcrumbs from "@/components/Breadcrumbs"
+import Analytics from "@/components/Analytics"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HG Remodelaciones - Empresa de Construcción",
-  description: "Empresa líder en construcción y desarrollo de proyectos residenciales y comerciales",
-  keywords: "construcción, edificación, proyectos, arquitectura, ingeniería",
-  authors: [{ name: "Temsa Tecnología", url: "https://crtemsa.com" }],
+  metadataBase: new URL('https://hgremodelaciones.com'),
+  title: {
+    default: "HG Remodelaciones - Empresa de Construcción en Costa Rica",
+    template: "%s | HG Remodelaciones"
+  },
+  description: "Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia. Proyectos residenciales, comerciales e industriales en Alajuela y todo el país.",
+  keywords: [
+    "construcción Costa Rica",
+    "remodelaciones Alajuela", 
+    "empresa construcción Costa Rica",
+    "proyectos residenciales",
+    "construcción comercial",
+    "remodelación casas",
+    "constructora Costa Rica",
+    "edificación",
+    "arquitectura",
+    "ingeniería civil"
+  ],
+  authors: [{ name: "HG Remodelaciones", url: "https://hgremodelaciones.com" }],
+  creator: "HG Remodelaciones",
+  publisher: "HG Remodelaciones",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_CR',
+    url: 'https://hgremodelaciones.com',
+    siteName: 'HG Remodelaciones',
+    title: 'HG Remodelaciones - Construcción y Remodelaciones en Costa Rica',
+    description: 'Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.',
+    images: [
+      {
+        url: '/images/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'HG Remodelaciones - Empresa de Construcción Costa Rica',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HG Remodelaciones - Construcción en Costa Rica',
+    description: 'Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.',
+    images: ['/images/logo.webp'],
+  },
+  verification: {
+    google: 'your-verification-code', // Agregar cuando tengas el código
+  },
+  other: {
+    'msvalidate.01': 'your-bing-verification-code',
+    'facebook-domain-verification': 'your-facebook-verification-code',
+  },
 }
 
 export default function RootLayout({
@@ -23,10 +84,14 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
+        <Analytics />
+        <StructuredData />
         <Header />
+        <Breadcrumbs />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Toaster />
       </body>
     </html>
   )

@@ -7,23 +7,63 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Loader2, Send } from "lucide-react"
+import { useAnalytics } from "@/hooks/use-analytics"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function ContactoPage() {
+  const { trackFormSubmission, trackPageView } = useAnalytics()
+  const { toast } = useToast()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "",
-    message: "",
+    message: ""
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData)
-    alert("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.")
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        toast({
+          title: "¡Mensaje enviado!",
+          description: data.message || "Te contactaremos pronto.",
+        })
+        trackFormSubmission('contact', true)
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+      } else {
+        const data = await response.json()
+        toast({
+          title: "Error al enviar",
+          description: data.error || "Error al enviar el mensaje. Por favor intenta nuevamente.",
+          variant: "destructive",
+        })
+        trackFormSubmission('contact', false)
+      }
+    } catch (error) {
+      toast({
+        title: "Error de conexión",
+        description: "No se pudo enviar el mensaje. Por favor intenta nuevamente.",
+        variant: "destructive",
+      })
+      trackFormSubmission('contact', false)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -134,9 +174,25 @@ export default function ContactoPage() {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700">
-                      <Send className="h-5 w-5 mr-2" />
-                      Enviar Mensaje
+
+
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                          Enviando...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-5 w-5 mr-2" />
+                          Enviar Mensaje
+                        </>
+                      )}
                     </Button>
                   </form>
                 </CardContent>
@@ -218,7 +274,7 @@ export default function ContactoPage() {
                       <p className="text-gray-700">
                         <span className="font-medium">Domingos:</span> Cerrado
                       </p>
-                      <p className="text-red-600 font-medium">Emergencias 24/7</p>
+                      
                     </div>
                   </CardContent>
                 </Card>

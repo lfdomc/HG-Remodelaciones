@@ -68,7 +68,7 @@ export default function Home() {
             <div className="relative">
               <Image
                 src="/images/conste.webp?height=400&width=600&text=Construcción"
-                alt="Proyecto de construcción"
+                alt="Proyecto de construcción residencial realizado por HG Remodelaciones en Costa Rica"
                 width={450}
                 height={450}
                 className="rounded-lg shadow-2xl"
