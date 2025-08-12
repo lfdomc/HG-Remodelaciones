@@ -1,12 +1,14 @@
+import { getBaseUrl } from '@/lib/config'
+
 export default function StructuredData() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "ConstructionCompany",
     "name": "HG Remodelaciones",
     "description": "Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia",
-    "url": "https://hgremodelaciones.com",
-    "logo": "https://hgremodelaciones.com/images/logo.webp",
-    "image": "https://hgremodelaciones.com/images/logo.webp",
+    "url": getBaseUrl(),
+    "logo": `${getBaseUrl()}/images/logo.webp`,
+    "image": `${getBaseUrl()}/images/logo.webp`,
     "telephone": "+506 8896 9195",
     "email": "info@hgremodelaciones.com",
     "address": {
@@ -45,7 +47,7 @@ export default function StructuredData() {
     "@type": "LocalBusiness",
     "name": "HG Remodelaciones",
     "description": "Empresa de construcción y remodelaciones en Costa Rica",
-    "url": "https://hgremodelaciones.com",
+    "url": getBaseUrl(),
     "telephone": "+506 8896 9195",
     "email": "info@hgremodelaciones.com",
     "address": {

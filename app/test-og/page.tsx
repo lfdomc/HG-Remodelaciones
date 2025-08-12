@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     siteName: "HG Remodelaciones",
     images: [
       {
-        url: "https://hgremodelaciones.com/images/logo.webp",
+        url: `${typeof window !== 'undefined' ? window.location.origin : 'https://hg-remodelaciones.vercel.app'}/images/logo.webp`,
         width: 1200,
         height: 630,
         alt: "HG Remodelaciones - Empresa de Construcción Costa Rica",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HG Remodelaciones - Construcción en Costa Rica",
     description: "Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.",
-    images: ["https://hgremodelaciones.com/images/logo.webp"],
+    images: [`${typeof window !== 'undefined' ? window.location.origin : 'https://hg-remodelaciones.vercel.app'}/images/logo.webp`],
   },
 }
 
@@ -42,7 +42,7 @@ export default function TestOGPage() {
             <li><strong>URL:</strong> https://hgremodelaciones.com</li>
             <li><strong>Título:</strong> HG Remodelaciones - Construcción y Remodelaciones en Costa Rica</li>
             <li><strong>Descripción:</strong> Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.</li>
-            <li><strong>Imagen:</strong> https://hgremodelaciones.com/images/logo.webp</li>
+            <li><strong>Imagen:</strong> {typeof window !== 'undefined' ? window.location.origin : 'https://hg-remodelaciones.vercel.app'}/images/logo.webp</li>
           </ul>
         </div>
 

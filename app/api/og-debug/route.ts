@@ -4,7 +4,7 @@ export async function GET() {
   const ogData = {
     title: "HG Remodelaciones - Construcción y Remodelaciones en Costa Rica",
     description: "Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.",
-    image: "https://hgremodelaciones.com/images/logo.webp",
+    image: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://hg-remodelaciones.vercel.app'}/images/logo.webp`,
     imageAlt: "HG Remodelaciones - Empresa de Construcción Costa Rica",
     url: "https://hgremodelaciones.com",
     siteName: "HG Remodelaciones",
