@@ -34,7 +34,7 @@ export const siteConfig = {
   title: 'HG Remodelaciones - Construcción y Remodelaciones en Costa Rica',
   description: 'Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia.',
   url: getBaseUrl(),
-  ogImage: getImageUrl('/images/logo.webp'),
+  ogImage: getImageUrl('/images/logo.jpeg'),
   logo: getImageUrl('/images/logo.webp'),
   logoJpeg: getImageUrl('/images/logo.jpeg'),
 }
