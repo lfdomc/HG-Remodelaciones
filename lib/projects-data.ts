@@ -34,7 +34,7 @@ export const projects: Project[] = [
   {
     id: "2",
     title: "Complejo Vacacional SB ",
-    description: "Remodelación  completa del Ebais de Terraba.",
+    description: "El proyecto esde obras de infraestructura habitacional, recreativa y de cerrado perimetral, cumpliendo con los planos constructivos y especificaciones técnicas aprobadas.",
     image: "/images/cuqui/1.webp?height=300&width=400&text=Centro+Comercial+Plaza",
     gallery: [
       "/images/cuqui/1.webp?height=400&width=600&text=Complejo+SB",

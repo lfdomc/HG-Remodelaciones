@@ -86,26 +86,41 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{project.title}</h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">{project.description}</p>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-olive-600" />
-                  <span className="text-gray-700">{project.location}</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col space-y-1">
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="h-5 w-5 text-olive-600" />
+                    <span className="text-gray-700 text-base md:text-lg font-medium">Ubicación:</span>
+                  </div>
+                  <span className="text-gray-700 text-base md:text-lg ml-8 break-words whitespace-pre-line">{project.location.replace(', ', '\n')}</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Ruler className="h-5 w-5 text-olive-600" />
-                  <span className="text-gray-700">{project.area}</span>
+                <div className="flex flex-col space-y-1">
+                  <div className="flex items-center space-x-3">
+                    <Ruler className="h-5 w-5 text-olive-600" />
+                    <span className="text-gray-700 text-base md:text-lg font-medium">Área:</span>
+                  </div>
+                  <span className="text-gray-700 text-base md:text-lg ml-8">{project.area}</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Calendar className="h-5 w-5 text-olive-600" />
-                  <span className="text-gray-700">{project.year}</span>
+                <div className="flex flex-col space-y-1">
+                  <div className="flex items-center space-x-3">
+                    <Calendar className="h-5 w-5 text-olive-600" />
+                    <span className="text-gray-700 text-base md:text-lg font-medium">Año:</span>
+                  </div>
+                  <span className="text-gray-700 text-base md:text-lg ml-8">{project.year}</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <User className="h-5 w-5 text-olive-600" />
-                  <span className="text-gray-700">{project.client}</span>
+                <div className="flex flex-col space-y-1">
+                  <div className="flex items-center space-x-3">
+                    <User className="h-5 w-5 text-olive-600" />
+                    <span className="text-gray-700 text-base md:text-lg font-medium">Cliente:</span>
+                  </div>
+                  <span className="text-gray-700 text-base md:text-lg ml-8">{project.client}</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-olive-600" />
-                  <span className="text-gray-700">{project.duration}</span>
+                <div className="flex flex-col space-y-1">
+                  <div className="flex items-center space-x-3">
+                    <Clock className="h-5 w-5 text-olive-600" />
+                    <span className="text-gray-700 text-base md:text-lg font-medium">Duración:</span>
+                  </div>
+                  <span className="text-gray-700 text-base md:text-lg ml-8">{project.duration}</span>
                 </div>
               </div>
             </div>
@@ -191,28 +206,28 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   <CardDescription>Información técnica del proyecto</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Categoría:</span>
-                    <Badge variant="secondary">{project.category}</Badge>
+                  <div className="flex flex-col space-y-1 py-2 border-b border-gray-100">
+                    <span className="text-gray-600 text-base font-bold">Categoría:</span>
+                    <Badge variant="secondary" className="self-start">{project.category}</Badge>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Área:</span>
+                  <div className="flex flex-col space-y-1 py-2 border-b border-gray-100">
+                    <span className="text-gray-600 text-base font-bold">Área:</span>
                     <span className="font-medium">{project.area}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Ubicación:</span>
-                    <span className="font-medium">{project.location}</span>
+                  <div className="flex flex-col space-y-1 py-2 border-b border-gray-100">
+                    <span className="text-gray-600 text-base font-bold">Ubicación:</span>
+                    <span className="font-medium whitespace-pre-line">{project.location.replace(', ', '\n')}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Año:</span>
+                  <div className="flex flex-col space-y-1 py-2 border-b border-gray-100">
+                    <span className="text-gray-600 text-base font-bold">Año:</span>
                     <span className="font-medium">{project.year}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Cliente:</span>
+                  <div className="flex flex-col space-y-1 py-2 border-b border-gray-100">
+                    <span className="text-gray-600 text-base font-bold">Cliente:</span>
                     <span className="font-medium">{project.client}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-gray-600">Duración:</span>
+                  <div className="flex flex-col space-y-1 py-2">
+                    <span className="text-gray-600 text-base font-bold">Duración:</span>
                     <span className="font-medium">{project.duration}</span>
                   </div>
                 </CardContent>
