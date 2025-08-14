@@ -55,7 +55,7 @@ export const projects: Project[] = [
       "Rancho de descanso",
       "Piscina recreativa",
       "Sala de juegos",
-     "bras exteriores en concreto,",
+     "Obras exteriores en concreto,",
      "Tapia perimetral",
     ],
   },
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     client: "Caja Costarrisence del Seguro Social",
     duration: "6 meses",
     features: [
-      "Cambio de sielo suspendido",
+      "Cambio de cielo suspendido",
       "Trabajo nocturno",
      
     ],
