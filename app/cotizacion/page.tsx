@@ -69,7 +69,7 @@ export default function CotizacionPage() {
 • Tipo: ${formData.projectType}
 • Área: ${formData.area} m²
 • Presupuesto: ${formData.budget || 'No especificado'}
-• Tiempo estimado: ${formData.timeline || 'No especificado'}
+• Tiempo estimado para iniciar proyecto: ${formData.timeline || 'No especificado'}
 
 ⚙️ *SERVICIOS REQUERIDOS*
 ${formData.services.length > 0 ? formData.services.map(service => `• ${service}`).join('\n') : '• No especificados'}
@@ -240,7 +240,7 @@ Solicitud enviada desde HG Remodelaciones`
                           required
                           value={formData.location}
                           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                          placeholder="Ciudad, Estado"
+                          placeholder="Ciudad, Provincia"
                         />
                       </div>
                     </div>
@@ -290,7 +290,7 @@ Solicitud enviada desde HG Remodelaciones`
                         </Select>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Tiempo Estimado</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Tiempo Estimado para Iniciar el proyecto</label>
                         <Select onValueChange={(value) => setFormData({ ...formData, timeline: value })}>
                           <SelectTrigger>
                             <SelectValue placeholder="¿Cuándo quieres iniciar?" />

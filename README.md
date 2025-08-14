@@ -4,22 +4,29 @@ Sitio web corporativo para HG Remodelaciones, empresa líder en construcción y 
 
 ## 🚀 Características
 
-- **Diseño Moderno y Responsivo**: Interfaz atractiva que se adapta a todos los dispositivos
-- **Formularios Funcionales**: Contacto y cotización con validación y envío de emails
+- **Diseño Moderno y Responsivo**: Interfaz atractiva optimizada para móviles y desktop
+- **Integración con WhatsApp**: Formularios que redirigen directamente a WhatsApp con mensajes pre-formateados
+- **Botón Flotante de WhatsApp**: Acceso rápido para contacto directo
+- **Formularios Inteligentes**: Contacto y cotización que generan mensajes estructurados para WhatsApp
+- **UI Mejorada**: Menús desplegables con fondo olive, mejor contraste y legibilidad
+- **Optimización Móvil**: Layout adaptativo con mejor visualización en dispositivos móviles
 - **Sistema de Notificaciones**: Toast notifications para mejor UX
-- **Analytics Integrado**: Seguimiento de eventos y conversiones
-- **Optimizado para SEO**: Metadatos y estructura optimizada
-- **Componentes Reutilizables**: Arquitectura modular con Radix UI
+- **Analytics Integrado**: Seguimiento completo de eventos, conversiones y clics de WhatsApp
+- **SEO Avanzado**: Metadatos Open Graph, sitemap dinámico, datos estructurados
+- **Componentes Reutilizables**: Arquitectura modular con Radix UI y Tailwind CSS
 
 ## 🛠️ Tecnologías
 
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **UI Components**: Radix UI
-- **Forms**: React Hook Form + Zod
-- **Email**: Resend
+- **Framework**: Next.js 15.2.4 (App Router)
+- **Styling**: Tailwind CSS con colores personalizados (olive, orangered, blue)
+- **UI Components**: Radix UI con componentes personalizados
+- **Forms**: React Hook Form + Zod para validación
+- **Email**: Resend para notificaciones
 - **Icons**: Lucide React
-- **TypeScript**: Para type safety
+- **TypeScript**: Para type safety completo
+- **Analytics**: Google Analytics 4 integrado
+- **SEO**: Sitemap dinámico, metadatos avanzados, datos estructurados
+- **Deployment**: Optimizado para Vercel y otras plataformas
 
 ## 📦 Instalación
 
@@ -81,6 +88,70 @@ Los templates de email se encuentran en `lib/email.ts`. Puedes personalizar:
 - Información de la empresa
 - Styling inline
 
+## 📱 Integración con WhatsApp
+
+### Funcionalidades Implementadas
+
+- **Formulario de Contacto**: Redirige a WhatsApp con mensaje pre-formateado
+- **Formulario de Cotización**: Genera mensaje estructurado con todos los datos del proyecto
+- **Botón Flotante**: Acceso rápido desde cualquier página
+- **Analytics**: Seguimiento de clics y conversiones
+
+### Configuración del Número de WhatsApp
+
+El número de WhatsApp se configura en múltiples archivos:
+
+```typescript
+// En components/WhatsAppButton.tsx
+const phoneNumber = "+50688969195"
+
+// En app/contacto/page.tsx y app/cotizacion/page.tsx
+const phoneNumber = "+50688969195"
+```
+
+### Personalización de Mensajes
+
+#### Formulario de Contacto
+Genera un mensaje simple con:
+- Datos personales (nombre, email, teléfono)
+- Asunto del mensaje
+- Contenido del mensaje
+
+#### Formulario de Cotización
+Genera un mensaje estructurado con:
+- Datos personales completos
+- Detalles del proyecto (tipo, área, presupuesto)
+- Servicios requeridos
+- Descripción detallada
+- Formato profesional con emojis
+
+### Ventajas de la Integración
+
+- **Comunicación Directa**: Los clientes contactan inmediatamente
+- **Datos Estructurados**: Información organizada y fácil de procesar
+- **Mayor Conversión**: Reduce fricción en el proceso de contacto
+- **Seguimiento**: Analytics integrado para medir efectividad
+
+## 🆕 Mejoras Recientes
+
+### Optimización de UI/UX
+- **Menús Desplegables Mejorados**: Fondo olive para mejor contraste y legibilidad
+- **Responsive Design**: Layout optimizado para dispositivos móviles
+- **Especificaciones de Proyecto**: Diseño vertical para mejor organización de datos
+- **Tipografía Mejorada**: Tamaños de fuente y pesos optimizados para mejor legibilidad
+
+### Mejoras SEO
+- **Sitemap Dinámico**: Generación automática con páginas de proyectos
+- **Metadatos Avanzados**: Open Graph optimizado para redes sociales
+- **Datos Estructurados**: Schema.org para mejor indexación
+- **Robots.txt**: Configuración optimizada para crawlers
+
+### Funcionalidades Técnicas
+- **Filtrado de Proyectos**: Sistema de categorías dinámico
+- **Galería de Imágenes**: Visualización optimizada de proyectos
+- **Analytics Avanzado**: Seguimiento detallado de interacciones
+- **Optimización de Rendimiento**: Carga mejorada y experiencia fluida
+
 ## 🎨 Personalización
 
 ### Colores y Tema
@@ -88,12 +159,24 @@ Los templates de email se encuentran en `lib/email.ts`. Puedes personalizar:
 Los colores principales se configuran en `tailwind.config.ts`:
 ```js
 colors: {
-  primary: {
-    // Azul corporativo
+  // Colores personalizados para la empresa de construcción
+  blue: {
     50: '#eff6ff',
     500: '#3b82f6',
     600: '#2563eb',
-    // ...
+    // Azul corporativo completo
+  },
+  olive: {
+    50: '#f7f8f0',
+    500: '#9aab5a',
+    600: '#7a8a44',
+    // Verde olivo para elementos principales
+  },
+  orangered: {
+    50: '#fef7f0',
+    500: '#eb7544',
+    600: '#dc5a2a',
+    // Naranja rojizo para acentos
   }
 }
 ```
@@ -123,10 +206,11 @@ Para habilitar Google Analytics:
 
 ### Eventos Tracked
 
-- Envío de formularios (éxito/error)
-- Clics en WhatsApp
-- Navegación entre páginas
-- Clics en botones importantes
+- **Formularios**: Envío exitoso/fallido de contacto y cotización
+- **WhatsApp**: Clics en botón flotante y redirecciones desde formularios
+- **Navegación**: Vistas de página y navegación entre secciones
+- **Engagement**: Clics en botones importantes y CTAs
+- **Conversiones**: Seguimiento completo del funnel de contacto
 
 ## 🚀 Deployment
 
@@ -198,10 +282,18 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 ## 🆘 Soporte
 
-Para soporte técnico:
-- Email: soporte@hgremodelaciones.com
-- WhatsApp: +506 8896 9195
+Para soporte técnico y consultas:
+- **Email**: info@hgremodelaciones.com
+- **WhatsApp**: +506 8896 9195
+- **Sitio Web**: [hgremodelaciones.com](https://hgremodelaciones.com)
+
+### Funcionalidades de Contacto
+- **Formulario de Contacto**: Redirección directa a WhatsApp
+- **Formulario de Cotización**: Mensajes estructurados para proyectos
+- **Botón Flotante**: Acceso rápido desde cualquier página
 
 ---
+
+**HG Remodelaciones** - Construyendo el futuro, un proyecto a la vez 🏗️
 
 Desarrollado con ❤️ por [Temsa Tecnología](https://crtemsa.com)

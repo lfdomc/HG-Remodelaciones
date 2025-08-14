@@ -23,7 +23,7 @@ export const projects: Project[] = [
     client: "Condominio Valle Verde.",
     duration: "1 mes",
     features: [
-      "50 unidades habitacionales",
+      
       "Lamina de cuberta de techo esmaltada",
       "Madera Deck en piso y banca",
       "Estuctura Metálica",
