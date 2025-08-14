@@ -47,7 +47,7 @@ export default function ServiciosPage() {
       title: "Proyectos de Oficinas",
       description: "Renovación de oficinas y espacios corporativos modernos y funcionales.",
       features: ["Espacio de oficinas", "Locales comerciales", "Espacios corporativos"],
-      image: "/images/comercial.webp?height=300&width=400&text=Proyectos+Comerciales",
+      image: "/images/comercial1.webp?height=300&width=400&text=Proyectos+Comerciales",
     },
     
     {
