@@ -13,12 +13,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/proyecto/${project.id}`}>
       <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
         <div className="relative h-48">
-          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+          <Image 
+            src={project.image || "/placeholder.svg"} 
+            alt={project.title} 
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover" 
+          />
         </div>
         <CardHeader>
           <div className="flex justify-between items-start">
-            <CardTitle className="text-gray-900 hover:text-blue-600 transition-colors">{project.title}</CardTitle>
-            <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+            <CardTitle className="text-gray-900 hover:text-olive-600 transition-colors">{project.title}</CardTitle>
+            <Badge variant="secondary" className="bg-olive-100 text-olive-800">
               {project.category}
             </Badge>
           </div>
@@ -27,7 +33,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <CardContent>
           <p className="text-gray-700 mb-4 line-clamp-2">{project.description}</p>
           <div className="flex justify-between items-center text-sm text-gray-500">
-            <span>Área: {project.area}</span>
+            <span>Area: {project.area}</span>
             <span>{project.year}</span>
           </div>
         </CardContent>

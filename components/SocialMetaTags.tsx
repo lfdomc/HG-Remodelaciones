@@ -23,8 +23,7 @@ export default function SocialMetaTags() {
       <meta name="telegram:title" content="HG Remodelaciones - Construcción y Remodelaciones en Costa Rica" />
       <meta name="telegram:description" content="Empresa líder en construcción y remodelaciones en Costa Rica con más de 20 años de experiencia." />
       
-      {/* Link rel para precargar la imagen */}
-      <link rel="preload" href={siteConfig.ogImage} as="image" type="image/jpeg" />
+      {/* Nota: No precargamos la imagen OG ya que es generada dinámicamente por API */}
       
       {/* Metadatos adicionales para mejorar compatibilidad con WhatsApp */}
       <meta property="og:site_name" content="HG Remodelaciones" />

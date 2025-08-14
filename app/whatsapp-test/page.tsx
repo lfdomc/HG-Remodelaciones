@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function WhatsAppTestPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-olive-50 py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -72,7 +72,7 @@ export default function WhatsAppTestPage() {
               <CardContent>
                 <ol className="space-y-3">
                   <li className="flex items-start">
-                    <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">1</span>
+                    <span className="bg-olive-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">1</span>
                     <div>
                       <p className="font-medium">Copia la URL del sitio</p>
                       <code className="text-sm bg-gray-100 px-2 py-1 rounded mt-1 block">
@@ -81,21 +81,21 @@ export default function WhatsAppTestPage() {
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">2</span>
+                    <span className="bg-olive-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">2</span>
                     <div>
                       <p className="font-medium">Abre WhatsApp</p>
                       <p className="text-sm text-gray-600">En tu teléfono o WhatsApp Web</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">3</span>
+                    <span className="bg-olive-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">3</span>
                     <div>
                       <p className="font-medium">Pega la URL en un chat</p>
                       <p className="text-sm text-gray-600">Puede ser en cualquier conversación</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">4</span>
+                    <span className="bg-olive-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-0.5">4</span>
                     <div>
                       <p className="font-medium">Espera la vista previa</p>
                       <p className="text-sm text-gray-600">WhatsApp procesará la URL y mostrará el logo</p>

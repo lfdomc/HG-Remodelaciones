@@ -53,7 +53,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                className="text-gray-700 hover:text-olive-600 font-medium transition-colors"
               >
                 {item.name}
               </Link>
@@ -63,7 +63,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex">
              <Link href="/cotizacion">
-              <Button className="bg-blue-600 hover:bg-blue-700">Solicitar Cotización</Button>
+              <Button className="bg-orangered-600 hover:bg-orangered-700">Solicitar Cotización</Button>
             </Link>
           </div>
 
@@ -81,14 +81,14 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-olive-600 font-medium transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
               <Link href="/cotizacion" onClick={() => setIsMenuOpen(false)}>
-                <Button className="bg-blue-600 hover:bg-blue-700 mt-4 w-full">Solicitar Cotización</Button>
+                <Button className="bg-orangered-600 hover:bg-orangered-700 mt-4 w-full">Solicitar Cotización</Button>
               </Link>
             </nav>
           </div>

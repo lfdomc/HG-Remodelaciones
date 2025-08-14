@@ -14,11 +14,21 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Optimizaciones para SEO
+  // Optimizaciones para SEO y rendimiento
   poweredByHeader: false,
   compress: true,
   // Configuración para sitemap y robots
   trailingSlash: false,
+  // Optimizaciones experimentales para CSS y rendimiento
+  experimental: {
+    optimizeCss: true,
+    cssChunking: 'strict',
+    optimizePackageImports: ['@/components', '@/lib'],
+  },
+  // Optimización de compilación
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   // Headers de seguridad y SEO
   async headers() {
     return [

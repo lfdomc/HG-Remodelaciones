@@ -46,7 +46,7 @@ export default function TestOGPage() {
           </ul>
         </div>
 
-        <div className="bg-blue-50 rounded-lg p-8 mb-8">
+        <div className="bg-olive-50 rounded-lg p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Cómo probar en WhatsApp:</h2>
           <ol className="list-decimal list-inside space-y-2">
             <li>Copia esta URL: <code className="bg-gray-200 px-2 py-1 rounded">https://hgremodelaciones.com</code></li>
@@ -64,7 +64,7 @@ export default function TestOGPage() {
                 href="https://developers.facebook.com/tools/debug/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-olive-600 hover:underline"
               >
                 Facebook Sharing Debugger
               </a>

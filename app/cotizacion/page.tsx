@@ -139,12 +139,12 @@ Solicitud enviada desde HG Remodelaciones`
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-r from-olive-900 to-olive-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <Calculator className="h-16 w-16 text-blue-300 mx-auto mb-6" />
+            <Calculator className="h-16 w-16 text-olive-300 mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Solicitar Cotización</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-olive-100 max-w-3xl mx-auto">
               Obtén una cotización personalizada para tu proyecto. Nuestro equipo de expertos te proporcionará una
               estimación detallada y profesional.
             </p>
@@ -157,29 +157,29 @@ Solicitud enviada desde HG Remodelaciones`
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FileText className="h-8 w-8 text-blue-600" />
+              <div className="bg-olive-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FileText className="h-8 w-8 text-olive-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">1. Completa el Formulario</h3>
               <p className="text-gray-600 text-sm">Proporciona los detalles de tu proyecto</p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-blue-600" />
+              <div className="bg-olive-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Clock className="h-8 w-8 text-olive-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">2. Análisis Técnico</h3>
               <p className="text-gray-600 text-sm">Nuestro equipo evalúa tu proyecto</p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calculator className="h-8 w-8 text-blue-600" />
+              <div className="bg-olive-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Calculator className="h-8 w-8 text-olive-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">3. Cotización Detallada</h3>
               <p className="text-gray-600 text-sm">Recibe una propuesta completa</p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-blue-600" />
+              <div className="bg-olive-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="h-8 w-8 text-olive-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">4. Reunión de Seguimiento</h3>
               <p className="text-gray-600 text-sm">Discutimos los detalles contigo</p>
@@ -386,7 +386,7 @@ Solicitud enviada desde HG Remodelaciones`
 
             <Card className="text-center">
               <CardHeader>
-                <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="h-12 w-12 text-olive-600 mx-auto mb-4" />
                 <CardTitle>Respuesta en 24 Horas</CardTitle>
               </CardHeader>
               <CardContent>

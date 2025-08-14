@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-blue-400">Enlaces Rápidos</h3>
+            <h3 className="text-lg font-semibold text-olive-400">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               {[
                 { name: "Inicio", href: "/" },
@@ -38,7 +38,7 @@ export default function Footer() {
                 { name: "Contacto", href: "/contacto" }
               ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-300 hover:text-blue-400 transition-colors">
+                  <Link href={item.href} className="text-gray-300 hover:text-olive-400 transition-colors">
                     {item.name}
                   </Link>
                 </li>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-blue-400">Servicios</h3>
+            <h3 className="text-lg font-semibold text-olive-400">Servicios</h3>
             <ul className="space-y-2">
               {[
                 "Construcción Residencial",
@@ -58,7 +58,7 @@ export default function Footer() {
                 "Consultoría",
               ].map((service) => (
                 <li key={service}>
-                  <Link href="/servicios" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  <Link href="/servicios" className="text-gray-300 hover:text-olive-400 transition-colors">
                     {service}
                   </Link>
                 </li>
@@ -68,18 +68,18 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-blue-400">Contacto</h3>
+            <h3 className="text-lg font-semibold text-olive-400">Contacto</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
+                <Phone className="h-5 w-5 text-olive-400" />
                 <span className="text-gray-300">+506 7071-6550</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
+                <Mail className="h-5 w-5 text-olive-400" />
                 <span className="text-gray-300">info@hgremodelaciones.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400" />
+                <MapPin className="h-5 w-5 text-olive-400" />
                 <span className="text-gray-300">Alajuela, Costa Rica</span>
               </div>
             </div>
@@ -91,16 +91,16 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/*
             <div className="flex space-x-6">
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Facebook">
+              <Link href="#" className="text-gray-400 hover:text-olive-400 transition-colors" aria-label="Síguenos en Facebook">
                 <Facebook className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Instagram">
+              <Link href="#" className="text-gray-400 hover:text-olive-400 transition-colors" aria-label="Síguenos en Instagram">
                 <Instagram className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Síguenos en Twitter">
+              <Link href="#" className="text-gray-400 hover:text-olive-400 transition-colors" aria-label="Síguenos en Twitter">
                 <Twitter className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Conéctate en LinkedIn">
+              <Link href="#" className="text-gray-400 hover:text-olive-400 transition-colors" aria-label="Conéctate en LinkedIn">
                 <Linkedin className="h-6 w-6" />
               </Link>
             </div>

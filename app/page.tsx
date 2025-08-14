@@ -12,10 +12,10 @@ export const metadata = {
   description:
     "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
   alternates: {
-    canonical: "https://hg-remodelaciones.vercel.app//",
+    canonical: "https://hgremodelaciones.com",
   },
   openGraph: {
-    url: "https://hg-remodelaciones.vercel.app//",
+    url: "https://hgremodelaciones.com",
     title: "HG Remodelaciones | Construcción y Proyectos",
     description:
       "HG Remodelaciones es una empresa líder en construcción y remodelación de proyectos residenciales y comerciales en Costa Rica.",
@@ -37,21 +37,21 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20 lg:py-32">
+      <section className="relative bg-gradient-to-r from-olive-900 to-olive-700 text-white py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 Construimos el
-                <span className="text-blue-300"> Futuro</span>
+                <span className="text-olive-300"> Futuro</span>
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-olive-100 leading-relaxed">
                 Más de 20 años de experiencia en construcción y desarrollo de proyectos residenciales y comerciales de
                 alta calidad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/proyectos">
-                  <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
+                  <Button size="lg" className="bg-white text-olive-900 hover:bg-gray-100">
                     Ver Proyectos
                   </Button>
                 </Link>
@@ -59,7 +59,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
+                    className="border-white text-white hover:bg-white hover:text-olive-900 bg-transparent"
                   >
                     Contactar
                   </Button>
@@ -116,7 +116,7 @@ export default function Home() {
             ].map((service, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                  <service.icon className="h-12 w-12 text-olive-600 mx-auto mb-4" />
                   <CardTitle className="text-gray-900">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -134,7 +134,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Nuestros Proyectos</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Conoce algunos de nuestros proyectos más destacados
+              Conozca algunos de nuestros proyectos más destacados
             </p>
           </div>
 
@@ -147,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-olive-900 text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
@@ -157,8 +157,8 @@ export default function Home() {
               
             ].map((stat, index) => (
               <div key={index}>
-                <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">{stat.number}</div>
-                <div className="text-lg text-blue-100">{stat.label}</div>
+                <div className="text-4xl lg:text-5xl font-bold text-olive-300 mb-2">{stat.number}</div>
+            <div className="text-lg text-olive-100">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -198,11 +198,11 @@ export default function Home() {
             ].map((contact, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <contact.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                  <contact.icon className="h-12 w-12 text-olive-600 mx-auto mb-4" />
                   <CardTitle className="text-gray-900">{contact.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Link href={contact.link} className="text-gray-600 hover:text-blue-600 transition-colors">
+                  <Link href={contact.link} className="text-gray-600 hover:text-olive-600 transition-colors">
                     {contact.info}
                   </Link>
                 </CardContent>

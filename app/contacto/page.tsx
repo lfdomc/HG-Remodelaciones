@@ -82,11 +82,11 @@ Enviado desde: hgremodelaciones.com`
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-r from-olive-900 to-olive-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contáctanos</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-olive-100 max-w-3xl mx-auto">
               Estamos aquí para ayudarte a hacer realidad tu proyecto. Ponte en contacto con nosotros y descubre cómo
               podemos trabajar juntos.
             </p>
@@ -217,7 +217,7 @@ Enviado desde: hgremodelaciones.com`
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <Phone className="h-8 w-8 text-blue-600" />
+                      <Phone className="h-8 w-8 text-olive-600" />
                       <div>
                         <CardTitle className="text-gray-900">Teléfono</CardTitle>
                         <CardDescription>Llámanos directamente</CardDescription>
@@ -233,7 +233,7 @@ Enviado desde: hgremodelaciones.com`
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <Mail className="h-8 w-8 text-blue-600" />
+                      <Mail className="h-8 w-8 text-olive-600" />
                       <div>
                         <CardTitle className="text-gray-900">Email</CardTitle>
                         <CardDescription>Envíanos un correo</CardDescription>
@@ -249,7 +249,7 @@ Enviado desde: hgremodelaciones.com`
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <MapPin className="h-8 w-8 text-blue-600" />
+                      <MapPin className="h-8 w-8 text-olive-600" />
                       <div>
                         <CardTitle className="text-gray-900">Oficina Principal</CardTitle>
                         <CardDescription>Visítanos</CardDescription>
@@ -266,7 +266,7 @@ Enviado desde: hgremodelaciones.com`
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <Clock className="h-8 w-8 text-blue-600" />
+                      <Clock className="h-8 w-8 text-olive-600" />
                       <div>
                         <CardTitle className="text-gray-900">Horarios</CardTitle>
                         <CardDescription>Estamos disponibles</CardDescription>

@@ -56,7 +56,7 @@ export default function TestOGImagePage() {
               href={`https://developers.facebook.com/tools/debug/?q=${encodeURIComponent(siteConfig.url)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+              className="block bg-olive-600 text-white px-4 py-2 rounded hover:bg-olive-700 transition-colors"
             >
               🔍 Validar en Facebook Debugger
             </a>
@@ -74,7 +74,7 @@ export default function TestOGImagePage() {
               href={`https://www.linkedin.com/post-inspector/inspect/${encodeURIComponent(siteConfig.url)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors"
+              className="block bg-olive-700 text-white px-4 py-2 rounded hover:bg-olive-800 transition-colors"
             >
               💼 Validar en LinkedIn Post Inspector
             </a>

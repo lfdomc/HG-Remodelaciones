@@ -3,6 +3,37 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Award, Users, Target, Heart, Building2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Nosotros - Nuestra Historia y Valores",
+  description: "Conoce la historia de HG Remodelaciones, empresa líder en construcción en Costa Rica con más de 20 años de experiencia. Descubre nuestros valores, misión y el equipo que hace posible cada proyecto.",
+  keywords: [
+    "historia HG Remodelaciones",
+    "empresa construcción Costa Rica",
+    "valores constructora",
+    "equipo construcción Alajuela",
+    "misión empresa construcción",
+    "experiencia construcción Costa Rica",
+    "constructora familiar Costa Rica"
+  ],
+  openGraph: {
+    title: "Nosotros - HG Remodelaciones",
+    description: "Conoce la historia y valores de HG Remodelaciones, empresa líder en construcción en Costa Rica con más de 20 años de experiencia.",
+    url: "https://hgremodelaciones.com/nosotros",
+    images: [
+      {
+        url: "/images/logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Equipo HG Remodelaciones - Empresa de Construcción Costa Rica",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://hgremodelaciones.com/nosotros",
+  },
+}
 
 export default function NosotrosPage() {
   const values = [
@@ -59,18 +90,18 @@ export default function NosotrosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-r from-olive-900 to-olive-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">Sobre Nosotros</h1>
-              <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-xl text-olive-100 leading-relaxed mb-8">
                 Con más de 20 años de experiencia, somos una empresa líder en construcción comprometida con la
                 excelencia, la innovación y la satisfacción de nuestros clientes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/proyectos">
-                  <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
+                  <Button size="lg" className="bg-white text-olive-900 hover:bg-gray-100">
                     Ver Proyectos
                   </Button>
                 </Link>
@@ -78,7 +109,7 @@ export default function NosotrosPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
+                    className="border-white text-white hover:bg-white hover:text-olive-900 bg-transparent"
                   >
                     Contactar
                   </Button>
@@ -104,7 +135,7 @@ export default function NosotrosPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <Card className="p-8">
               <CardHeader className="text-center">
-                <Target className="h-16 w-16 text-blue-600 mx-auto mb-4" />
+                <Target className="h-16 w-16 text-olive-600 mx-auto mb-4" />
                 <CardTitle className="text-2xl text-gray-900">Nuestra Misión</CardTitle>
               </CardHeader>
               <CardContent>
@@ -117,7 +148,7 @@ export default function NosotrosPage() {
 
             <Card className="p-8">
               <CardHeader className="text-center">
-                <Building2 className="h-16 w-16 text-blue-600 mx-auto mb-4" />
+                <Building2 className="h-16 w-16 text-olive-600 mx-auto mb-4" />
                 <CardTitle className="text-2xl text-gray-900">Nuestra Visión</CardTitle>
               </CardHeader>
               <CardContent>
@@ -145,7 +176,7 @@ export default function NosotrosPage() {
             {values.map((value, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <value.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                  <value.icon className="h-12 w-12 text-olive-600 mx-auto mb-4" />
                   <CardTitle className="text-gray-900">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -180,7 +211,7 @@ export default function NosotrosPage() {
                     />
                   </div>
                   <CardTitle className="text-gray-900">{member.name}</CardTitle>
-                  <CardDescription className="text-blue-600 font-medium">{member.position}</CardDescription>
+                  <CardDescription className="text-olive-600 font-medium">{member.position}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 text-sm">{member.description}</p>
@@ -192,20 +223,20 @@ export default function NosotrosPage() {
       </section>*/}
 
       {/* Stats */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-olive-900 text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">100+</div>
-              <div className="text-lg text-blue-100">Proyectos Completados</div>
+              <div className="text-4xl lg:text-5xl font-bold text-olive-300 mb-2">100+</div>
+              <div className="text-lg text-olive-100">Proyectos Completados</div>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">20+</div>
-              <div className="text-lg text-blue-100">Años de Experiencia</div>
+              <div className="text-4xl lg:text-5xl font-bold text-olive-300 mb-2">20+</div>
+              <div className="text-lg text-olive-100">Años de Experiencia</div>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-blue-300 mb-2">80+</div>
-              <div className="text-lg text-blue-100">Clientes Satisfechos</div>
+              <div className="text-4xl lg:text-5xl font-bold text-olive-300 mb-2">80+</div>
+              <div className="text-lg text-olive-100">Clientes Satisfechos</div>
             </div>
            
           </div>

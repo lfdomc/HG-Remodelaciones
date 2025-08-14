@@ -6,10 +6,53 @@ import Image from "next/image"
 import Link from "next/link"
 import { projects } from "@/lib/projects-data"
 import { notFound } from "next/navigation"
+import type { Metadata } from "next"
 
 interface ProjectPageProps {
   params: {
     id: string
+  }
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const project = projects.find((p) => p.id === params.id)
+
+  if (!project) {
+    return {
+      title: "Proyecto no encontrado - HG Remodelaciones",
+      description: "El proyecto solicitado no fue encontrado."
+    }
+  }
+
+  return {
+    title: `${project.title} - Proyecto de ${project.category}`,
+    description: `${project.description} Proyecto de ${project.category.toLowerCase()} ubicado en ${project.location}, Costa Rica. Área: ${project.area}, completado en ${project.year}.`,
+    keywords: [
+      project.category.toLowerCase(),
+      `proyecto ${project.category.toLowerCase()} Costa Rica`,
+      `construcción ${project.location}`,
+      project.title,
+      "HG Remodelaciones",
+      "construcción Costa Rica",
+      `${project.category} ${project.location}`
+    ],
+    openGraph: {
+      title: `${project.title} - HG Remodelaciones`,
+      description: `${project.description} Proyecto de ${project.category.toLowerCase()} en ${project.location}, Costa Rica.`,
+      url: `https://hgremodelaciones.com/proyecto/${project.id}`,
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} - Proyecto de ${project.category} en ${project.location}`,
+        },
+      ],
+      type: "article",
+    },
+    alternates: {
+      canonical: `https://hgremodelaciones.com/proyecto/${project.id}`,
+    },
   }
 }
 
@@ -37,7 +80,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="secondary" className="bg-blue-100 text-blue-800 mb-4">
+              <Badge variant="secondary" className="bg-olive-100 text-olive-800 mb-4">
                 {project.category}
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{project.title}</h1>
@@ -45,23 +88,23 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-blue-600" />
+                  <MapPin className="h-5 w-5 text-olive-600" />
                   <span className="text-gray-700">{project.location}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Ruler className="h-5 w-5 text-blue-600" />
+                  <Ruler className="h-5 w-5 text-olive-600" />
                   <span className="text-gray-700">{project.area}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Calendar className="h-5 w-5 text-blue-600" />
+                  <Calendar className="h-5 w-5 text-olive-600" />
                   <span className="text-gray-700">{project.year}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <User className="h-5 w-5 text-blue-600" />
+                  <User className="h-5 w-5 text-olive-600" />
                   <span className="text-gray-700">{project.client}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-blue-600" />
+                  <Clock className="h-5 w-5 text-olive-600" />
                   <span className="text-gray-700">{project.duration}</span>
                 </div>
               </div>
@@ -118,7 +161,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   <ul className="grid md:grid-cols-2 gap-3">
                     {project.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-gray-700">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-olive-600 rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}
@@ -185,7 +228,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   </p>
                   <div className="space-y-3">
                     <Link href="/cotizacion" className="block">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700">Solicitar Cotización</Button>
+                      <Button className="w-full bg-orangered-600 hover:bg-orangered-700">Solicitar Cotización</Button>
                     </Link>
                     <Link href="/contacto" className="block">
                       <Button variant="outline" className="w-full bg-transparent">
@@ -220,7 +263,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                       />
                     </div>
                     <CardHeader>
-                      <CardTitle className="text-gray-900 hover:text-blue-600 transition-colors">
+                      <CardTitle className="text-gray-900 hover:text-olive-600 transition-colors">
                         {relatedProject.title}
                       </CardTitle>
                       <CardDescription>{relatedProject.location}</CardDescription>

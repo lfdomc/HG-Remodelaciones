@@ -83,11 +83,11 @@ export default function ServiciosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-r from-olive-900 to-olive-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Nuestros Servicios</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-olive-100 max-w-3xl mx-auto">
               Ofrecemos soluciones integrales en construcción con más de 20 años de experiencia y los más altos
               estándares de calidad
             </p>
@@ -107,12 +107,13 @@ export default function ServiciosPage() {
                       src={service.image || "/placeholder.svg"}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </div>
                   <div className="p-6">
                     <CardHeader className="p-0 mb-4">
-                      <service.icon className="h-12 w-12 text-blue-600 mb-4" />
+                      <service.icon className="h-12 w-12 text-olive-600 mb-4" />
                       <CardTitle className="text-gray-900">{service.title}</CardTitle>
                       <CardDescription className="text-gray-600">{service.description}</CardDescription>
                     </CardHeader>
@@ -120,7 +121,7 @@ export default function ServiciosPage() {
                       <ul className="space-y-2">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                            <div className="w-2 h-2 bg-olive-600 rounded-full mr-3"></div>
                             {feature}
                           </li>
                         ))}
@@ -143,7 +144,7 @@ export default function ServiciosPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/cotizacion">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-orangered-600 hover:bg-orangered-700">
                 Solicitar Cotización
               </Button>
             </Link>

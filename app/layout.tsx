@@ -11,8 +11,16 @@ import Breadcrumbs from "@/components/Breadcrumbs"
 import Analytics from "@/components/Analytics"
 import SocialMetaTags from "@/components/SocialMetaTags"
 import { Toaster } from "@/components/ui/toaster"
+import CriticalCSS from "@/components/CriticalCSS"
+import BfcacheOptimizer from "@/components/BfcacheOptimizer"
 
-const inter = Inter({ subsets: ["latin"] })
+// Optimizar carga de fuentes para mejorar FCP
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -97,7 +105,9 @@ export default function RootLayout({
       <head>
         <SocialMetaTags />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${inter.variable}`}>
+        <CriticalCSS />
+        <BfcacheOptimizer />
         <Analytics />
         <StructuredData />
         <Header />
