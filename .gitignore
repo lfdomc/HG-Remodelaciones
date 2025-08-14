@@ -25,3 +25,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large files and executables
+*.exe
+*.msi
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# large media files (over 50MB)
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.iso
