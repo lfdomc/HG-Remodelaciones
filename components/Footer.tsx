@@ -4,9 +4,9 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-white mt-1">
+      <div className="max-w-7xl mx-auto" style={{padding: '3rem 1.5rem 3rem 1.5rem', paddingTop: '1.5rem'}}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-olive-400">Enlaces Rápidos</h3>
+            <h3 className="text-lg font-semibold text-olive-400 mb-3">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               {[
                 { name: "Inicio", href: "/" },
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-olive-400">Servicios</h3>
+            <h3 className="text-lg font-semibold text-olive-400 mb-3">Servicios</h3>
             <ul className="space-y-2">
               {[
                 "Construcción Residencial",
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-olive-400">Contacto</h3>
+            <h3 className="text-lg font-semibold text-olive-400 mb-3">Contacto</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-olive-400" />
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media & Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/*
             <div className="flex space-x-6">

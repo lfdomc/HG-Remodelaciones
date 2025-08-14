@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     "servicios construcción Costa Rica",
     "construcción residencial Alajuela",
     "proyectos comerciales Costa Rica", 
-    "construcción industrial",
     "remodelaciones Costa Rica",
     "mantenimiento edificios",
     "consultoría construcción",
@@ -40,23 +39,17 @@ export default function ServiciosPage() {
       title: "Construcción Residencial",
       description:
         "Construcción de casas, condominios y desarrollos habitacionales con los más altos estándares de calidad.",
-      features: ["Diseño arquitectónico", "Construcción completa", "Acabados de lujo", "Jardines y paisajismo"],
+      features: [ "Construcción completa", "Acabados de lujo", "Jardines y paisajismo"],
       image: "/images/residencial.webp?height=300&width=400&text=Construcción+Residencial",
     },
     {
       icon: Building,
-      title: "Proyectos Comerciales",
-      description: "Desarrollo de centros comerciales, oficinas y espacios corporativos modernos y funcionales.",
-      features: ["Centros comerciales", "Edificios de oficinas", "Locales comerciales", "Espacios corporativos"],
+      title: "Proyectos de Oficinas",
+      description: "Renovación de oficinas y espacios corporativos modernos y funcionales.",
+      features: ["Espacio de oficinas", "Locales comerciales", "Espacios corporativos"],
       image: "/images/comercial.webp?height=300&width=400&text=Proyectos+Comerciales",
     },
-    {
-      icon: Building2,
-      title: "Construcción Industrial",
-      description: "Naves industriales, bodegas y plantas de producción con tecnología de vanguardia.",
-      features: ["Naves industriales", "Bodegas logísticas", "Plantas de producción", "Instalaciones especializadas"],
-      image: "/images/industrial.webp?height=300&width=400&text=Construcción+Industrial",
-    },
+    
     {
       icon: Hammer,
       title: "Remodelaciones",
@@ -64,20 +57,7 @@ export default function ServiciosPage() {
       features: ["Remodelación integral", "Ampliaciones", "Modernización", "Restauración"],
       image: "/images/remodelaciones.webp?height=300&width=400&text=Remodelaciones",
     },
-    {
-      icon: Wrench,
-      title: "Mantenimiento",
-      description: "Servicios de mantenimiento preventivo y correctivo para preservar sus inversiones.",
-      features: ["Mantenimiento preventivo", "Reparaciones", "Inspecciones técnicas", "Servicios de emergencia"],
-      image: "/images/mant1.webp?height=300&width=400&text=Mantenimiento",
-    },
-    {
-      icon: Users,
-      title: "Consultoría",
-      description: "Asesoría especializada en proyectos de construcción desde la planificación hasta la ejecución.",
-      features: ["Estudios de factibilidad", "Gestión de proyectos", "Supervisión técnica", "Asesoría legal"],
-      image: "/images/consultoria.webp?height=300&width=400&text=Consultoría",
-    },
+    
   ]
 
   return (
@@ -102,7 +82,7 @@ export default function ServiciosPage() {
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="grid md:grid-cols-2">
-                  <div className="relative h-64 md:h-auto">
+                  <div className="relative h-80">
                     <Image
                       src={service.image || "/placeholder.svg"}
                       alt={service.title}
