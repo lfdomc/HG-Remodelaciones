@@ -87,7 +87,7 @@ export const projects: Project[] = [
 
   {
     id: "4",
-    title: "Construcción de Ebais EL Coco",
+    title: "Construcción de Ebais del Coco",
     description: "Construcción de Ebais en Guanacaste.",
     image: "/images/costa/11.webp",
     gallery: [
@@ -122,9 +122,9 @@ export const projects: Project[] = [
     id: "5",
     title: "Construcción de Ebais Liberia",
     description: "Construcción de Ebais en Guanacaste.",
-    image: "/images/ebais/1.webp",
+    image: "/images/ebais/8.webp",
     gallery: [
-      "/images/ebais/1.webp",
+     
       "/images/ebais/2.webp",
       "/images/ebais/3.webp",
        "/images/ebais/4.webp",
