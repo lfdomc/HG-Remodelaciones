@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { projects } from "@/lib/projects-data"
 import { notFound } from "next/navigation"
+import ProjectGallery from "@/components/ProjectGallery"
 import type { Metadata } from "next"
 
 interface ProjectPageProps {
@@ -15,7 +16,8 @@ interface ProjectPageProps {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = projects.find((p) => p.id === params.id)
+  const { id } = await params
+  const project = projects.find((p) => p.id === id)
 
   if (!project) {
     return {
@@ -56,8 +58,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.id === params.id)
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { id } = await params
+  const project = projects.find((p) => p.id === id)
 
   if (!project) {
     notFound()
@@ -125,37 +128,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative aspect-[3/2]">
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-xl"
+                fill
+                className="rounded-lg shadow-xl object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Galería del Proyecto</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {project.gallery.map((image, index) => (
-              <div key={index} className="relative h-64 group overflow-hidden rounded-lg">
-                <Image
-                  src={image || "/placeholder.svg"}
-                  alt={`${project.title} - Imagen ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectGallery gallery={project.gallery} projectTitle={project.title} />
 
       {/* Project Details */}
       <section className="py-20">
@@ -274,6 +260,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                         src={relatedProject.image || "/placeholder.svg"}
                         alt={relatedProject.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover"
                       />
                     </div>

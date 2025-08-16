@@ -116,12 +116,12 @@ export default function NosotrosPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative aspect-[6/5]">
               <Image
-                src="/images/co1.webp?height=500&width=600&text=Equipo+ConstructPro"
+                src="/images/co1.webp"
                 alt="Equipo"
-                width={600}
-                height={500}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 className="rounded-lg shadow-2xl"
               />
             </div>

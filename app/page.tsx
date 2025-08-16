@@ -66,15 +66,14 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative aspect-[3/2]">
               <Image
                 src="/images/conster.webp"
                 alt="Proyecto de construcción residencial realizado por HG Remodelaciones en Costa Rica"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-2xl w-full h-auto"
+                fill
+                className="rounded-lg shadow-2xl object-cover"
                 priority
-                sizes="(max-width: 568px) 100vw, (max-width: 800px) 30vw, 400px"
+                sizes="(max-width: 568px) 100vw, (max-width: 800px) 50vw, 600px"
               />
             </div>
           </div>

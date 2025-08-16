@@ -5,23 +5,33 @@ import { Badge } from "@/components/ui/badge"
 import ProjectCard from "@/components/ProjectCard"
 import { projects } from "@/lib/projects-data"
 import Link from "next/link"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
+import { Download } from "lucide-react"
 
 export default function ProyectosPage() {
-  // Get unique categories from projects data
+  // Get unique categories from projects data with consistent ordering
   const uniqueCategories = useMemo(() => {
-    const cats = Array.from(new Set(projects.map(project => project.category)))
+    const cats = Array.from(new Set(projects.map(project => project.category))).sort()
     return ["Todos", ...cats]
   }, [])
 
   const [selectedCategory, setSelectedCategory] = useState("Todos")
+  const [isClient, setIsClient] = useState(false)
 
-  // Filter projects based on selected category
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Filter projects based on selected category and sort by ID descending
   const filteredProjects = useMemo(() => {
+    let filtered
     if (selectedCategory === "Todos") {
-      return projects
+      filtered = projects
+    } else {
+      filtered = projects.filter(project => project.category === selectedCategory)
     }
-    return projects.filter(project => project.category === selectedCategory)
+    // Sort by ID in descending order (highest ID first)
+    return filtered.sort((a, b) => parseInt(b.id) - parseInt(a.id))
   }, [selectedCategory])
 
   return (
@@ -63,7 +73,7 @@ export default function ProyectosPage() {
 
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {uniqueCategories.map((category) => (
+            {isClient && uniqueCategories.map((category) => (
               <Badge
                 key={category}
                 variant={selectedCategory === category ? "default" : "secondary"}
@@ -94,6 +104,25 @@ export default function ProyectosPage() {
               </p>
             </div>
           )}
+
+          {/* Download CV Section */}
+          <div className="text-center mt-16 pt-12 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Currículum Completo</h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Descarga nuestro currículum completo para conocer más detalles sobre nuestra experiencia, 
+              proyectos realizados y capacidades técnicas.
+            </p>
+            <a 
+              href="/curriculum-hg-remodelaciones.pdf" 
+              download="HG-Remodelaciones-Curriculum.pdf"
+              className="inline-flex"
+            >
+              <Button size="lg" className="bg-olive-600 hover:bg-olive-700 text-white">
+                <Download className="h-5 w-5 mr-2" />
+                Descargar Currículum PDF
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 

@@ -81,6 +81,25 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-verification-code', // Agregar cuando tengas el código
   },
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        url: '/icon',
+        type: 'image/png',
+        sizes: '32x32',
+      },
+    ],
+    shortcut: '/favicon.svg',
+    apple: {
+      url: '/icon',
+      sizes: '32x32',
+      type: 'image/png',
+    },
+  },
   other: {
     'msvalidate.01': 'your-bing-verification-code',
     'facebook-domain-verification': 'your-facebook-verification-code',
