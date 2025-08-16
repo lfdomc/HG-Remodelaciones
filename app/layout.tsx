@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   verification: {
-    google: 'your-verification-code', // Agregar cuando tengas el código
+    google: 'qsxAIbW3fZHmgG_W28Xq8aez3gh2nbBJNyfWCLTgwVk',
   },
   icons: {
     icon: [
