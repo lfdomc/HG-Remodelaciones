@@ -4,7 +4,7 @@ import Script from 'next/script'
 
 export default function Analytics() {
   // Reemplaza 'GA_MEASUREMENT_ID' con tu ID real de Google Analytics
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-Z9BK29284G'
 
   return (
     <>
