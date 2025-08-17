@@ -308,5 +308,30 @@ export const projects: Project[] = [
       
     ],
   },
+  {
+    id: "12",
+    title: "Cambio de cubierta de techo en planta de producción.",
+    description: "Cambio de techo en planta de producción con paneles compuestos.",
+    image: "/images/bri/4.webp",
+    gallery: [
+      "/images/bri/3.webp",
+      "/images/bri/4.webp",
+      "/images/bri/5.webp", 
+      "/images/bri/2.webp", 
+    ],
+    category: "Comercial",
+    location: "Belén, Heredia",
+    area: "3300 m²",
+    year: "2021",
+    client: "Brishtone",
+
+    duration: "4 meses",
+    features: [
+      "Cambio de Cubierta de Techos",
+      "Paneles compuestos",
+      
+      
+    ],
+  },
 ]
 
