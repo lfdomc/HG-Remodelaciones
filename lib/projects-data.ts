@@ -87,8 +87,8 @@ export const projects: Project[] = [
 
   {
     id: "4",
-    title: "Construcción de Ebais del Coco",
-    description: "Construcción de Ebais en Guanacaste.",
+    title: "Construcción y equipamientode Ebais del Coco",
+    description: "Construcción y equipamientode Ebais en Guanacaste.",
     image: "/images/costa/11.webp",
     gallery: [
       "/images/costa/1.webp",
@@ -120,8 +120,8 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    title: "Construcción de Ebais Liberia",
-    description: "Construcción de Ebais en Guanacaste.",
+    title: "Construcción y equipamiento de Ebais Liberia",
+    description: "Construcción y equipamientode Ebais en Guanacaste.",
     image: "/images/ebais/8.webp",
     gallery: [
      
@@ -278,9 +278,8 @@ export const projects: Project[] = [
     client: "Caja Costarrisence del Seguro Social",
     duration: "6 meses",
     features: [
-      "Creación completa de edificio",
-      "Certificación LEED Gold",
-      "Renovación Electrica",
+      "Construcción completa de edificio",
+      "Renovación de instalación eléctrica",
       "Cambio de fachada principal",
       
     ],
