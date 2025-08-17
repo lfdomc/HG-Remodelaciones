@@ -68,7 +68,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[3/2]">
               <Image
-                src="/images/conster.webp"
+                src="/images/constru1.webp"
                 alt="Proyecto de construcción residencial realizado por HG Remodelaciones en Costa Rica"
                 fill
                 className="rounded-lg shadow-2xl object-cover"
