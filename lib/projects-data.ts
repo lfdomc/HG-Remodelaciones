@@ -179,8 +179,8 @@ export const projects: Project[] = [
   {
     id: "7",
 
-    title: "Construcción de Bodegas Monte Verde",
-    description: "Construcción de Bodegas Monte Verde, de 300 mts con amplitud para descarga de materiales.",
+    title: "Construcción de Bodegas Monteverde",
+    description: "Construcción de Bodegas Monteverde, de 300 mts con amplitud para descarga de materiales.",
     image: "/images/monte/monte1.webp",
     gallery: [
       "/images/monte/monte1.webp",
@@ -233,7 +233,7 @@ export const projects: Project[] = [
   {
     id: "9",
     title: "Complejo Vacacional SB ",
-    description: "El proyecto esde obras de infraestructura habitacional, recreativa y de cerrado perimetral, cumpliendo con los planos constructivos y especificaciones técnicas aprobadas.",
+    description: "El proyecto es de obras de infraestructura habitacional, recreativa y de cerrado perimetral, cumpliendo con los planos constructivos y especificaciones técnicas aprobadas.",
     image: "/images/cuqui/1.webp",
     gallery: [
       "/images/cuqui/1.webp",
@@ -261,7 +261,7 @@ export const projects: Project[] = [
   {
     id: "10",
     title: "Construcción del Ebais las Brisas",
-    description: "Edificio de para la atención de pacientes del Seguro Social.",
+    description: "Edificio para la atención de pacientes del Seguro Social.",
     image: "/images/brisas/brisas1.webp",
     gallery: [
       "/images/brisas/2.webp",
