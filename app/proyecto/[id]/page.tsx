@@ -221,11 +221,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               <Card className="mt-6">
                 <CardHeader>
-                  <CardTitle>¿Te interesa un proyecto similar?</CardTitle>
+                  <CardTitle>¿Le interesa un proyecto similar?</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600 text-sm">
-                    Podemos ayudarte a desarrollar un proyecto similar adaptado a tus necesidades específicas.
+                    Podemos ayudarle a desarrollar un proyecto similar adaptado a sus necesidades específicas.
                   </p>
                   <div className="space-y-3">
                     <Link href="/cotizacion" className="block">

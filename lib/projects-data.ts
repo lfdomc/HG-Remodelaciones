@@ -224,7 +224,7 @@ export const projects: Project[] = [
     duration: "1 mes",
     features: [
       
-      "Lamina de cuberta de techo esmaltada",
+      "Lámina de cuberta de techo esmaltada",
       "Madera Deck en piso y banca",
       "Estuctura Metálica",
       "Enchapes tipo porcelanato cerámica",
@@ -278,7 +278,7 @@ export const projects: Project[] = [
     client: "Caja Costarrisence del Seguro Social",
     duration: "6 meses",
     features: [
-      "Construcción completa de edificio",
+      "Construcción completa del edificio",
       "Renovación de instalación eléctrica",
       "Cambio de fachada principal",
       
