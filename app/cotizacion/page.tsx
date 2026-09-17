@@ -81,7 +81,7 @@ ${formData.description}
 Solicitud enviada desde HG Remodelaciones`
 
       // Número de WhatsApp de la empresa
-      const phoneNumber = '+50688969195'
+      const phoneNumber = '+50670716550'
       
       // Crear URL de WhatsApp
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`

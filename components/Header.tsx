@@ -7,9 +7,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function Header() {
-
-
-  const phoneNumber = "+50688969195" // Reemplaza con el número real
+  const phoneNumber = "+50670716550"
   const message = "Hola, me interesa obtener más información sobre sus servicios de construcción."
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`

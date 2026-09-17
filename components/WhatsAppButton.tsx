@@ -6,7 +6,7 @@ import { useAnalytics } from "@/hooks/use-analytics"
 
 export default function WhatsAppButton() {
   const { trackWhatsAppClick } = useAnalytics()
-  const phoneNumber = "+50688969195" // Reemplaza con el número real
+  const phoneNumber = "+50670716550"
   const message = "Hola, me interesa obtener más información sobre sus servicios de construcción."
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`

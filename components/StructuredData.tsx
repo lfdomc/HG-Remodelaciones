@@ -9,8 +9,8 @@ export default function StructuredData() {
     "url": getBaseUrl(),
     "logo": `${getBaseUrl()}/images/logo.webp`,
     "image": `${getBaseUrl()}/images/logo.webp`,
-    "telephone": "+506 8896 9195",
-    "email": "info@hgremodelaciones.com",
+    "telephone": "+506 7071 6550",
+    "email": "hmgatjens1962@outlook.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Alajuela",
@@ -48,8 +48,8 @@ export default function StructuredData() {
     "name": "HG Remodelaciones",
     "description": "Empresa de construcción y remodelaciones en Costa Rica",
     "url": getBaseUrl(),
-    "telephone": "+506 8896 9195",
-    "email": "info@hgremodelaciones.com",
+    "telephone": "+506 7071 6550",
+    "email": "hmgatjens1962@outlook.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Alajuela",

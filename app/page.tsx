@@ -185,8 +185,8 @@ export default function Home() {
               {
                 icon: Mail,
                 title: "Email",
-                info: "info@hgremodelaciones.com",
-                link: "mailto:info@hgremodelaciones.com",
+                info: "hmgatjens1962@outlook.com",
+                link: "mailto:hmgatjens1962@outlook.com",
               },
               {
                 icon: MapPin,

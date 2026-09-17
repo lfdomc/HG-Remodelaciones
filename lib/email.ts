@@ -40,7 +40,7 @@ export async function sendContactEmail(data: ContactFormData) {
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL || 'noreply@hgremodelaciones.com',
-      to: [process.env.TO_EMAIL || 'info@hgremodelaciones.com'],
+      to: [process.env.TO_EMAIL || 'hmgatjens1962@outlook.com'],
       subject: `Nuevo mensaje de contacto: ${data.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -90,7 +90,7 @@ export async function sendQuoteEmail(data: QuoteFormData) {
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL || 'noreply@hgremodelaciones.com',
-      to: [process.env.TO_EMAIL || 'info@hgremodelaciones.com'],
+      to: [process.env.TO_EMAIL || 'hmgatjens1962@outlook.com'],
       subject: `Nueva Solicitud de Cotización - ${data.projectType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

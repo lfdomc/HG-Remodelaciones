@@ -42,7 +42,7 @@ ${formData.message}
 ---
 Enviado desde: hgremodelaciones.com`
 
-      const phoneNumber = "+50688969195"
+      const phoneNumber = "+50670716550"
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
       // Abrir WhatsApp en una nueva ventana
@@ -241,7 +241,7 @@ Enviado desde: hgremodelaciones.com`
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 font-medium">info@hgremodelaciones.com</p>
+                    <p className="text-gray-700 font-medium">hmgatjens1962@outlook.com</p>
                     <p className="text-gray-600 text-sm"></p>
                   </CardContent>
                 </Card>
